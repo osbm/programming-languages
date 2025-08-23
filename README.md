@@ -21,7 +21,6 @@ Remaining Languages:
 - Haskell
 - Assembly
 - Lua
-- Perl
 - R
 - Julia
 - Elixir
