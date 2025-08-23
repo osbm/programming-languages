@@ -14,7 +14,6 @@ Remaining Languages:
 - Java
 - Kotlin
 - Cuda
-- C
 - C++
 - C#
 - Haskell
