@@ -32,6 +32,7 @@ def scan_upto(N: int):
 
     return best_n, best_steps, best_peak, xor_steps
 
+
 print("hello world")
 
 N = 1_000_000
