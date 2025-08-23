@@ -17,7 +17,6 @@ Remaining Languages:
 - PowerShell
 - Nim
 - D
-- Crystal
 - Vlang
 - Bend
 - Nix
