@@ -20,7 +20,6 @@ Remaining Languages:
 - Nix
 - Lisp
 - Scheme
-- Prolog
 - Fortran
 - Octave
 
