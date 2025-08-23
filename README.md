@@ -7,7 +7,6 @@ Every example prints a hello world and makes an computation about Collatz Conjec
 Remaining Languages:
 - Dart
 - Go
-- NodeJS
 - Ruby
 - Java
 - Kotlin
