@@ -1,5 +1,5 @@
 public class Main {
-    
+
     public static long[] collatzLenAndPeak(long x) {
         long steps = 0;
         long peak = x;
