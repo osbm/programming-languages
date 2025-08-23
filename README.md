@@ -9,7 +9,6 @@ Remaining Languages:
 - C#
 - Haskell
 - Assembly
-- R
 - Julia
 - Elixir
 - Erlang
