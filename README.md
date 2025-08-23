@@ -6,7 +6,6 @@ Every example prints a hello world and makes an computation about Collatz Conjec
 
 Remaining Languages:
 - Cuda
-- C#
 - Haskell
 - Assembly
 - Julia
