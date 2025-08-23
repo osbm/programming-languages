@@ -19,7 +19,6 @@ Remaining Languages:
 - Fish
 - PowerShell
 - Nim
-- Zig
 - D
 - Crystal
 - Vlang
