@@ -2,20 +2,20 @@ collatz_len_and_peak <- function(x) {
   steps <- 0
   peak <- x
   n <- x
-  
+
   while (n != 1) {
     if (n %% 2 != 0) {
       n <- 3 * n + 1
     } else {
       n <- n %/% 2
     }
-    
+
     if (n > peak) {
       peak <- n
     }
     steps <- steps + 1
   }
-  
+
   return(c(steps, peak))
 }
 
@@ -24,7 +24,7 @@ scan_upto <- function(n) {
   best_steps <- 0
   best_peak <- 1
   xor_steps <- 0
-  
+
   for (i in 1:n) {
     result <- collatz_len_and_peak(i)
     steps <- result[1]
@@ -36,7 +36,7 @@ scan_upto <- function(n) {
       best_peak <- peak
     }
   }
-  
+
   return(c(best_n, best_steps, best_peak, xor_steps))
 }
 
