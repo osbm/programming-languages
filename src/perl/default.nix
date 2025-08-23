@@ -1,2 +1,1 @@
-{pkgs, ...}:
-pkgs.writers.writePerlBin "perl" {} (builtins.readFile ./main.pl)
+{pkgs, ...}: pkgs.writers.writePerlBin "perl" {} (builtins.readFile ./main.pl)

@@ -1,10 +1,9 @@
-{ pkgs, ... }:
-
+{pkgs, ...}:
 pkgs.stdenv.mkDerivation {
   name = "rust";
   src = ./main.rs;
   unpackPhase = "true";
-  buildInputs = [ pkgs.rustc];
+  buildInputs = [pkgs.rustc];
   buildPhase = ''
     rustc -o main $src
   '';
