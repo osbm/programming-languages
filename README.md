@@ -8,7 +8,6 @@ Remaining Languages:
 - Dart
 - Go
 - NodeJS
-- Typescript
 - Ruby
 - Java
 - Kotlin
