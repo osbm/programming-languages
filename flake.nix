@@ -18,6 +18,6 @@
     in {
       packages = forAllSystems (system: let
         pkgs = makePkgs system;
-      in pkgs.callPackage ./src);
+      in pkgs.callPackage ./src {});
     };
 }
