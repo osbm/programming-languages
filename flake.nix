@@ -18,6 +18,12 @@
     in {
       packages = forAllSystems (system: let
         pkgs = makePkgs system;
-      in pkgs.callPackage ./src {});
+        allPackages = pkgs.callPackage ./src {};
+      in
+        # Filter out override functions that confuse nix flake show
+        pkgs.lib.filterAttrs (name: value:
+          pkgs.lib.isDerivation value
+        ) allPackages
+      );
     };
 }
