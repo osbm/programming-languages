@@ -8,7 +8,6 @@ Remaining Languages:
 - Cuda
 - Haskell
 - Assembly
-- Julia
 - Erlang
 - OCaml
 - F#
