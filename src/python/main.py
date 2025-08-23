@@ -32,10 +32,10 @@ def scan_upto(N: int):
 
     return best_n, best_steps, best_peak, xor_steps
 
+print("hello world")
 
 N = 1_000_000
 nstar, steps, peak, checksum = scan_upto(N)
-print("hello world")
 print(f"collatz_longest(1..{N})")
 print(f"n*={nstar} ")
 print(f"steps={steps} ")
