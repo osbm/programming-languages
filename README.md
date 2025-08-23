@@ -9,7 +9,6 @@ Remaining Languages:
 - Haskell
 - Assembly
 - Julia
-- Elixir
 - Erlang
 - OCaml
 - F#
