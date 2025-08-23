@@ -27,6 +27,7 @@ Remaining Languages:
 - Swift
 - PHP
 - Bash
+- Fish
 - PowerShell
 - Nim
 - Zig
