@@ -16,7 +16,6 @@ Remaining Languages:
 - OCaml
 - F#
 - Swift
-- PHP
 - Bash
 - Fish
 - PowerShell
