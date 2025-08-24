@@ -12,11 +12,11 @@ You can build and run any language example using Nix:
 
 ```bash
 # Build and run Python example
-nix run .#python
+nix run github:osbm/programming-languages#python
 
 # Or you can first build and then run to compare compilation and execution times
-nix build .#rust
-nix run .#rust
+nix build github:osbm/programming-languages#rust
+nix run github:osbm/programming-languages#rust
 ```
 
 
