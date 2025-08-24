@@ -62,6 +62,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Python** - General-purpose scripting
 - ✅ **PyPy** - High-performance Python implementation
 - ✅ **R** - Statistical computing
+- ✅ **Racket** - Modern Lisp/Scheme
 - ✅ **Ruby** - Elegant scripting language
 - ✅ **Rust** - Memory-safe systems programming
 - ✅ **Scheme** - Minimalist Lisp dialect
@@ -75,7 +76,6 @@ nix run github:osbm/programming-languages#rust
 
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Clojure** - Lisp dialect for JVM
-- 🔄 **Racket** - Modern Lisp/Scheme
 - 🔄 **Deno** - Modern JavaScript/TypeScript runtime
 - 🔄 **Bun** - Fast JavaScript runtime
 - 🔄 **Assembly** - Low-level programming
