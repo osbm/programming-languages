@@ -9,10 +9,8 @@ Remaining Languages:
 - Haskell
 - Assembly
 - F#
-- D
 - Bend
 - Nix
 - Lisp
-- Octave
 
 
