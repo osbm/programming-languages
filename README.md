@@ -49,6 +49,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Fish** - Friendly shell scripting
 - ✅ **Fortran** - Scientific and numerical computing
 - ✅ **Gleam** - Type-safe for Erlang VM
+- ✅ **GLSL** - Graphics shader language
 - ✅ **Go** - Concurrent systems programming
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
@@ -84,7 +85,6 @@ nix run github:osbm/programming-languages#rust
 - 🔄 **Mojo** - Python-compatible AI language
 - 🔄 **Bend** - Parallel programming language
 - 🔄 **Nix** - Functional package management language
-- 🔄 **GLSL** - Graphics shader language
 
 
 ## 🏆 Example Output
