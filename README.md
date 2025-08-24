@@ -48,6 +48,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **F#** - .NET functional-first language
 - ✅ **Fish** - Friendly shell scripting
 - ✅ **Fortran** - Scientific and numerical computing
+- ✅ **Gleam** - Type-safe for Erlang VM
 - ✅ **Go** - Concurrent systems programming
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
@@ -80,7 +81,6 @@ nix run github:osbm/programming-languages#rust
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Cuda** - GPU programming
-- 🔄 **Gleam** - Type-safe for Erlang VM
 - 🔄 **Mojo** - Python-compatible AI language
 - 🔄 **Bend** - Parallel programming language
 - 🔄 **Nix** - Functional package management language
