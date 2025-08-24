@@ -73,29 +73,15 @@ nix run .#rust
 
 ## 🎯 Remaining Languages
 
-<details>
-<summary><strong>High Priority</strong></summary>
 
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Clojure** - Lisp dialect for JVM
 - 🔄 **Racket** - Modern Lisp/Scheme
 - 🔄 **Deno** - Modern JavaScript/TypeScript runtime
 - 🔄 **Bun** - Fast JavaScript runtime
-
-</details>
-
-<details>
-<summary><strong>Systems & Performance</strong></summary>
-
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Carbon** - Google's C++ successor (experimental)
 - 🔄 **Cuda** - GPU programming
-
-</details>
-
-<details>
-<summary><strong>Emerging & Specialized</strong></summary>
-
 - 🔄 **Gleam** - Type-safe for Erlang VM
 - 🔄 **Mojo** - Python-compatible AI language
 - 🔄 **Bend** - Parallel programming language
@@ -103,11 +89,10 @@ nix run .#rust
 - 🔄 **GLSL** - Graphics shader language
 - 🔄 **Lisp** - Classic functional programming
 
-</details>
 
 ## 🏆 Example Output
 
-All programs produce identical output:
+All programs produce identical output (though some programs do not count all the way up to 1,000,000 due to performance constraints):
 
 ```
 hello world!
