@@ -14,11 +14,9 @@ You can build and run any language example using Nix:
 # Build and run Python example
 nix run .#python
 
-# Build and run Rust example
+# Or you can first build and then run to compare compilation and execution times
+nix build .#rust
 nix run .#rust
-
-# Build and run any other language
-nix run .#<language>
 ```
 
 
