@@ -8,7 +8,6 @@ Remaining Languages:
 - Cuda
 - Haskell
 - Assembly
-- F#
 - Bend
 - Nix
 - Lisp
