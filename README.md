@@ -104,7 +104,7 @@ xor_steps=880
 ## 🛠️ Requirements
 
 - **Nix** with flakes enabled
-- **Git** (for flake operations)
+- **Internet access** (nix will take care of fetching dependencies)
 
 ## 📈 Contributing
 
@@ -119,5 +119,3 @@ Feel free to contribute new language implementations! Each language should:
 ## 📜 License
 
 This project is open source and available under the MIT License.
-
-
