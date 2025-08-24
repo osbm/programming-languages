@@ -37,6 +37,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **C** - Classic systems programming
 - ✅ **C++** - Object-oriented systems programming
 - ✅ **C#** - .NET object-oriented programming
+- ✅ **Clojure** - Lisp dialect for JVM
 - ✅ **Crystal** - Ruby-like syntax, C-like performance
 - ✅ **Cython** - Python with C extensions
 - ✅ **D** - Systems programming with garbage collection
@@ -77,7 +78,6 @@ nix run github:osbm/programming-languages#rust
 ## 🎯 Remaining Languages
 
 - 🔄 **Haskell** - Pure functional programming
-- 🔄 **Clojure** - Lisp dialect for JVM
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Carbon** - Google's C++ successor (experimental)
 - 🔄 **Cuda** - GPU programming
