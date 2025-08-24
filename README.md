@@ -11,7 +11,6 @@ Remaining Languages:
 - F#
 - Swift
 - Bash
-- Fish
 - PowerShell
 - Nim
 - D
