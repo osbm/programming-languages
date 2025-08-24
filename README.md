@@ -50,6 +50,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **JavaScript (Node.js)** - Web and server scripting
 - ✅ **Julia** - High-performance scientific computing
 - ✅ **Kotlin** - Modern JVM language
+- ✅ **Lisp** - Classic functional programming
 - ✅ **Lua** - Lightweight scripting
 - ✅ **Nim** - Efficient, expressive systems programming
 - ✅ **OCaml** - ML family functional language
@@ -85,7 +86,6 @@ nix run github:osbm/programming-languages#rust
 - 🔄 **Bend** - Parallel programming language
 - 🔄 **Nix** - Functional package management language
 - 🔄 **GLSL** - Graphics shader language
-- 🔄 **Lisp** - Classic functional programming
 
 
 ## 🏆 Example Output
