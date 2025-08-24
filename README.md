@@ -33,6 +33,7 @@ nix run github:osbm/programming-languages#rust
 ## 🎨 Implemented Languages
 
 - ✅ **Bash** - Shell scripting
+- ✅ **Bun** - Fast JavaScript runtime
 - ✅ **C** - Classic systems programming
 - ✅ **C++** - Object-oriented systems programming
 - ✅ **C#** - .NET object-oriented programming
@@ -77,7 +78,6 @@ nix run github:osbm/programming-languages#rust
 
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Clojure** - Lisp dialect for JVM
-- 🔄 **Bun** - Fast JavaScript runtime
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Carbon** - Google's C++ successor (experimental)
 - 🔄 **Cuda** - GPU programming
