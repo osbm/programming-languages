@@ -15,7 +15,6 @@ Remaining Languages:
 - Bend
 - Nix
 - Lisp
-- Scheme
 - Octave
 
 
