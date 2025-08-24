@@ -43,7 +43,7 @@ scan_upto() {
 
 echo "hello world!"
 
-N=1000000
+N=10000
 read nstar steps peak checksum <<< "$(scan_upto $N)"
 echo "collatz_longest(1..$N)"
 echo "n*=$nstar"
