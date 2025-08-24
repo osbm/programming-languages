@@ -69,10 +69,8 @@ nix run github:osbm/programming-languages#rust
 - ✅ **V** - Simple, fast compilation
 - ✅ **Zig** - Simple, fast systems programming
 
-**Total: 36 languages implemented** ✨
 
 ## 🎯 Remaining Languages
-
 
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Clojure** - Lisp dialect for JVM
