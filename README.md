@@ -79,7 +79,6 @@ nix run github:osbm/programming-languages#rust
 
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Assembly** - Low-level programming
-- 🔄 **Carbon** - Google's C++ successor (experimental)
 - 🔄 **Cuda** - GPU programming
 - 🔄 **Gleam** - Type-safe for Erlang VM
 - 🔄 **Mojo** - Python-compatible AI language
