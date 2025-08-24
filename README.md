@@ -59,6 +59,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Lisp** - Classic functional programming
 - ✅ **Lua** - Lightweight scripting
 - ✅ **Nim** - Efficient, expressive systems programming
+- ✅ **Nix** - Functional package management language
 - ✅ **OCaml** - ML family functional language
 - ✅ **Octave** - MATLAB-compatible mathematical programming
 - ✅ **Perl** - Text processing and scripting
@@ -83,7 +84,6 @@ nix run github:osbm/programming-languages#rust
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Cuda** - GPU programming
 - 🔄 **Bend** - Parallel programming language
-- 🔄 **Nix** - Functional package management language
 
 
 ## 🏆 Example Output
