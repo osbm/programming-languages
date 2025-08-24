@@ -51,6 +51,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Gleam** - Type-safe for Erlang VM
 - ✅ **GLSL** - Graphics shader language
 - ✅ **Go** - Concurrent systems programming
+- ✅ **Haskell** - Pure functional programming
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
 - ✅ **Julia** - High-performance scientific computing
@@ -79,7 +80,6 @@ nix run github:osbm/programming-languages#rust
 
 ## 🎯 Remaining Languages
 
-- 🔄 **Haskell** - Pure functional programming
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Cuda** - GPU programming
 - 🔄 **Mojo** - Python-compatible AI language
