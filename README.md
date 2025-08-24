@@ -82,7 +82,6 @@ nix run github:osbm/programming-languages#rust
 
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Cuda** - GPU programming
-- 🔄 **Mojo** - Python-compatible AI language
 - 🔄 **Bend** - Parallel programming language
 - 🔄 **Nix** - Functional package management language
 
