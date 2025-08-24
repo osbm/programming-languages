@@ -40,6 +40,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Cython** - Python with C extensions
 - ✅ **D** - Systems programming with garbage collection
 - ✅ **Dart** - Client-optimized programming
+- ✅ **Deno** - Modern JavaScript/TypeScript runtime
 - ✅ **Elixir** - Concurrent functional programming
 - ✅ **Erlang** - Fault-tolerant concurrent programming
 - ✅ **F#** - .NET functional-first language
@@ -76,7 +77,6 @@ nix run github:osbm/programming-languages#rust
 
 - 🔄 **Haskell** - Pure functional programming
 - 🔄 **Clojure** - Lisp dialect for JVM
-- 🔄 **Deno** - Modern JavaScript/TypeScript runtime
 - 🔄 **Bun** - Fast JavaScript runtime
 - 🔄 **Assembly** - Low-level programming
 - 🔄 **Carbon** - Google's C++ successor (experimental)
