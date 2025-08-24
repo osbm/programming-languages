@@ -9,7 +9,6 @@ Remaining Languages:
 - Haskell
 - Assembly
 - F#
-- PowerShell
 - Nim
 - D
 - Bend
