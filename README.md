@@ -39,6 +39,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **C#** - .NET object-oriented programming
 - ✅ **Clojure** - Lisp dialect for JVM
 - ✅ **Crystal** - Ruby-like syntax, C-like performance
+- ✅ **Cuda** - GPU programming
 - ✅ **Cython** - Python with C extensions
 - ✅ **D** - Systems programming with garbage collection
 - ✅ **Dart** - Client-optimized programming
@@ -83,7 +84,6 @@ nix run github:osbm/programming-languages#rust
 ## 🎯 Remaining Languages
 
 - 🔄 **Assembly** - Low-level programming
-- 🔄 **Cuda** - GPU programming
 - 🔄 **Bend** - Parallel programming language
 
 
