@@ -32,6 +32,7 @@ nix run github:osbm/programming-languages#rust
 
 ## 🎨 Implemented Languages
 
+- ✅ **Assembly** - Low-level programming
 - ✅ **Bash** - Shell scripting
 - ✅ **Bun** - Fast JavaScript runtime
 - ✅ **C** - Classic systems programming
@@ -83,7 +84,6 @@ nix run github:osbm/programming-languages#rust
 
 ## 🎯 Remaining Languages
 
-- 🔄 **Assembly** - Low-level programming
 - 🔄 **Bend** - Parallel programming language
 
 
