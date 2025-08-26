@@ -43,6 +43,7 @@
           "libnvjitlink"
           "libcusparse"
           "libnpp"
+          "nvidia-x11"
         ];
       };
     };
