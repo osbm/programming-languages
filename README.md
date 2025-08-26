@@ -60,6 +60,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Lua** - Lightweight scripting
 - ✅ **Nim** - Efficient, expressive systems programming
 - ✅ **Nix** - Functional package management language
+- ✅ **Nushell** - Modern shell with a focus on data
 - ✅ **OCaml** - ML family functional language
 - ✅ **Octave** - MATLAB-compatible mathematical programming
 - ✅ **Perl** - Text processing and scripting
