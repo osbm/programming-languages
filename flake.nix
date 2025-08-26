@@ -19,6 +19,7 @@
     makePkgs = system: import nixpkgs {
       inherit system;
       config = {
+        cudaSupport = true;
         allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
           "cuda-merged"
           "cuda_cuobjdump"
