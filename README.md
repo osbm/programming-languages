@@ -36,6 +36,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Bash** - Shell scripting
 - ✅ **Bun** - Fast JavaScript runtime
 - ✅ **C** - Classic systems programming
+- ✅ **C (assembly)** - C with partial assembly implementation (contributed by [bdrtr](https://github.com/bdrtr))
 - ✅ **C++** - Object-oriented systems programming
 - ✅ **C#** - .NET object-oriented programming
 - ✅ **Clojure** - Lisp dialect for JVM
@@ -53,7 +54,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Gleam** - Type-safe for Erlang VM
 - ✅ **GLSL** - Graphics shader language
 - ✅ **Go** - Concurrent systems programming
-- ✅ **Go (concurrency)** - Go but with concurrency
+- ✅ **Go (concurrency)** - Go but with concurrency  (contributed by [bdrtr](https://github.com/bdrtr))
 - ✅ **Haskell** - Pure functional programming
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
