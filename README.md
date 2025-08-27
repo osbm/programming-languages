@@ -78,7 +78,6 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Ruby** - Elegant scripting language
 - ✅ **Rust** - Memory-safe systems programming
 - ✅ **Scheme** - Minimalist Lisp dialect
-- ✅ **Swift** - Apple's modern programming language
 - ✅ **TypeScript** - Typed JavaScript
 - ✅ **V** - Simple, fast compilation
 - ✅ **Zig** - Simple, fast systems programming
