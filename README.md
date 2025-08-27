@@ -53,6 +53,7 @@ nix run github:osbm/programming-languages#rust
 - ✅ **Gleam** - Type-safe for Erlang VM
 - ✅ **GLSL** - Graphics shader language
 - ✅ **Go** - Concurrent systems programming
+- ✅ **Go (concurrency)** - Go but with concurrency
 - ✅ **Haskell** - Pure functional programming
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
