@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation {
-  name = "collatz-assembly";
+  name = "assembly";
   src = ./.;
   buildInputs = [ pkgs.gcc ];
   buildPhase = ''
