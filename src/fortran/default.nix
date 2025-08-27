@@ -1,8 +1,8 @@
-{ pkgs }:
+{pkgs}:
 pkgs.stdenv.mkDerivation {
   name = "fortran";
   src = ./.;
-  nativeBuildInputs = [ pkgs.gfortran ];
+  nativeBuildInputs = [pkgs.gfortran];
 
   buildPhase = ''
     gfortran -o main ${./main.f90}

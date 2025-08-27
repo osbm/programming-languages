@@ -1,10 +1,9 @@
 {pkgs, ...}:
-
 pkgs.stdenv.mkDerivation {
   name = "zig";
   src = ./main.zig;
   unpackPhase = "true";
-  buildInputs = [ pkgs.zig ];
+  buildInputs = [pkgs.zig];
   buildPhase = ''
     cp $src main.zig
     export ZIG_GLOBAL_CACHE_DIR=$TMPDIR/zig-cache

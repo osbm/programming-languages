@@ -1,8 +1,8 @@
-{ pkgs }:
+{pkgs}:
 pkgs.stdenv.mkDerivation {
   name = "crystal";
   src = ./.;
-  buildInputs = [ pkgs.crystal ];
+  buildInputs = [pkgs.crystal];
   buildPhase = ''
     crystal build -o main ${./main.cr}
   '';

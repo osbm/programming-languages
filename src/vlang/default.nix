@@ -1,4 +1,4 @@
-{ pkgs }:
+{pkgs}:
 pkgs.writeShellScriptBin "vlang" ''
   TMPDIR=$(mktemp -d)
   cp ${./main.v} $TMPDIR/main.v

@@ -1,9 +1,8 @@
 {pkgs, ...}:
-
 pkgs.stdenv.mkDerivation {
   name = "assembly";
   src = ./.;
-  buildInputs = [ pkgs.gcc ];
+  buildInputs = [pkgs.gcc];
   buildPhase = ''
     gcc -o main main.s
   '';
@@ -13,6 +12,6 @@ pkgs.stdenv.mkDerivation {
   '';
   meta = {
     mainProgram = "main";
-    platforms = [ "x86_64-linux" ];
+    platforms = ["x86_64-linux"];
   };
 }

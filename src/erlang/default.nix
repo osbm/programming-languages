@@ -1,4 +1,4 @@
-{ pkgs }:
+{pkgs}:
 pkgs.writeShellScriptBin "erlang" ''
   TMPDIR=$(mktemp -d)
   cp ${./main.erl} $TMPDIR/main.erl
