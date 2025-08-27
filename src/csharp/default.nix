@@ -1,9 +1,8 @@
 {pkgs, ...}:
-
 pkgs.stdenv.mkDerivation {
   name = "csharp";
   src = ./.;
-  buildInputs = [ pkgs.dotnet-sdk ];
+  buildInputs = [pkgs.dotnet-sdk];
   buildPhase = ''
     dotnet new console --force --name CollatzApp
     cp Program.cs CollatzApp/Program.cs
