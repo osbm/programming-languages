@@ -8,7 +8,7 @@
 
 const std = @import("std");
 const print = std.debug.print;
-const c = @cImport(@cInclude("/home/bedir/Documents/vsCode/programming-languages/src/c-zig/collatz.h"));
+const c = @cImport(@cInclude("collatz.h"));
 
 const Result = struct {
     best_n : u64 = 0,
