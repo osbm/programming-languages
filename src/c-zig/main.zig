@@ -2,6 +2,8 @@
 //2025
 //bdrtr
 
+// 0.15.1 version // zig build-exe main.zig collatz.c -lc
+
 // Zig is a systems programming language that is 100% compatible with C; it is not meant to replace C, but aims to coexist with it.
 
 const std = @import("std");
