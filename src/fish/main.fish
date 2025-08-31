@@ -55,9 +55,9 @@ end
 
 function main
     echo "hello world!"
-    echo "collatz_longest(1..100000)"
+    echo "collatz_longest(1..10000)"
 
-    scan_upto 100000
+    scan_upto 10000
     set n $scan_max_n
     set steps $scan_max_len
     set peak $scan_max_peak
