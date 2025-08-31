@@ -29,7 +29,7 @@ jobs:
     - name: Get available packages
       id: packages
       run: |
-        packages=$(nix flake show --json | jq -r '.packages."x86_64-linux" | keys | map(select(. != "cuda")) | join(" ")')
+        packages=$(nix flake show --json | jq -r '.packages."x86_64-linux" | keys | map(select(. != "cuda" and . != "glsl")) | join(" ")')
         echo "packages=$packages" >> $GITHUB_OUTPUT
 
     - name: Test all programming languages
@@ -78,7 +78,7 @@ jobs:
     - name: Get available Docker images
       id: docker-images
       run: |
-        images=$(nix flake show --json | jq -r '.dockerImages."x86_64-linux" | keys | map(select(. != "cuda")) | join(" ")')
+        images=$(nix flake show --json | jq -r '.dockerImages."x86_64-linux" | keys | map(select(. != "cuda" and . != "glsl")) | join(" ")')
         echo "images=$images" >> $GITHUB_OUTPUT
 
     - name: Build and push Docker images
