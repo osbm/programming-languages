@@ -57,7 +57,11 @@
         allPackages = pkgs.callPackage ./src {};
       in
         # Filter out override functions that confuse nix flake show
-        pkgs.lib.filterAttrs (name: value: pkgs.lib.isDerivation value) allPackages
+        # and filter out packages that don't support the current system
+        pkgs.lib.filterAttrs (name: value: 
+          pkgs.lib.isDerivation value && 
+          builtins.elem system (value.meta.platforms or supportedSystems)
+        ) allPackages
     );
   };
 }
