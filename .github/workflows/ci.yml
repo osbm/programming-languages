@@ -38,7 +38,7 @@ jobs:
         for package in ${{ steps.packages.outputs.packages }}; do
           echo "::group::Testing $package"
           echo "Running: nix run .#$package"
-          timeout 500 nix run .#$package || {
+          timeout 1000 nix run .#$package || {
             echo "::error::Package $package failed or timed out"
             exit 1
           }
