@@ -19,6 +19,29 @@ nix build github:osbm/programming-languages#rust
 nix run github:osbm/programming-languages#rust
 ```
 
+## 🐳 Docker Usage
+
+You can also build and run the examples as Docker images:
+
+```bash
+# Build a Docker image for C++ on x86_64-linux
+nix build .#dockerImages.x86_64-linux.cpp
+
+# Load the image into Docker
+docker load < result
+
+# Run the Docker container
+docker run --rm programming-languages-cpp
+```
+
+Available Docker images for each supported architecture:
+- `x86_64-linux` - Intel/AMD 64-bit Linux
+- `aarch64-linux` - ARM 64-bit Linux
+- `x86_64-darwin` - Intel/AMD 64-bit macOS
+- `aarch64-darwin` - ARM 64-bit macOS (Apple Silicon)
+
+**Note:** CUDA does not work idk why...
+
 
 ## 📊 What Each Program Does
 
