@@ -30,7 +30,7 @@ let
       xor_steps = xor_steps;
     };
 
-  n_limit = 1000000; # 1000000 is very slow in Nix, use 1000 for demo
+  n_limit = 100000; # 1000000 is very slow in Nix, use 1000 for demo
   stats = scanUpto n_limit;
   formatted = ''collatz_longest(1..${toString n_limit})
 n*=${toString stats.nstar}
