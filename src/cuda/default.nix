@@ -5,7 +5,7 @@
     config = pkgs.config // {
       cudaSupport = true;
       allowUnfreePredicate = pkg:
-            builtins.elem (nixpkgs.lib.getName pkg) [
+            builtins.elem (pkgs.lib.getName pkg) [
               "cuda-merged"
               "cuda_cuobjdump"
               "cuda_gdb"
