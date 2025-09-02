@@ -1,6 +1,41 @@
 {pkgs, ...}: let
+  # Create a nixpkgs instance with CUDA support enabled
+  pkgsWithCuda = import pkgs.path {
+    inherit (pkgs) system;
+    config = pkgs.config // {
+      cudaSupport = true;
+      allowUnfreePredicate = pkg:
+            builtins.elem (pkgs.lib.getName pkg) [
+              "cuda-merged"
+              "cuda_cuobjdump"
+              "cuda_gdb"
+              "cuda_nvcc"
+              "cuda_nvdisasm"
+              "cuda_profiler"
+              "cuda_nvprune"
+              "cuda_cccl"
+              "cuda_cudart"
+              "cuda_cupti"
+              "cuda_cuxxfilt"
+              "cuda_nvml_dev"
+              "cuda_nvrtc"
+              "cuda_nvtx"
+              "cuda_profiler_api"
+              "cuda_sanitizer_api"
+              "libcublas"
+              "libcurand"
+              "libcufft"
+              "libcusolver"
+              "libnvjitlink"
+              "libcusparse"
+              "libnpp"
+              "nvidia-x11"
+            ];
+    };
+  };
+
   # Use CUDA 12.0 which should be compatible with driver 580.76.05
-  cudaPackages = pkgs.cudaPackages_12_0;
+  cudaPackages = pkgsWithCuda.cudaPackages_12_0;
   cudatoolkit = cudaPackages.cudatoolkit;
 in
   cudaPackages.backendStdenv.mkDerivation {
