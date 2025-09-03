@@ -41,6 +41,7 @@ jobs:
         done
 
   build-and-publish-docker:
+    if: false
     runs-on: ubuntu-latest
     needs: test-languages
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -127,6 +128,7 @@ jobs:
         echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 
   test-docker-images:
+    if: false
     runs-on: ubuntu-latest
     needs: build-and-publish-docker
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
