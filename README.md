@@ -21,7 +21,20 @@ nix run github:osbm/programming-languages#rust
 
 ## 🐳 Docker Usage
 
-You can also build and run the examples as Docker images:
+### Pre-built Images (Recommended)
+
+Pre-built Docker images are automatically published to GitHub Container Registry:
+
+```bash
+# Run any language directly from GitHub Container Registry
+docker run --rm ghcr.io/osbm/programming-languages-python:latest
+docker run --rm ghcr.io/osbm/programming-languages-rust:latest
+docker run --rm ghcr.io/osbm/programming-languages-cpp:latest
+```
+
+### Building Your Own Images
+
+You can also build and run the examples as Docker images locally:
 
 ```bash
 # Build a Docker image for C++ on x86_64-linux
