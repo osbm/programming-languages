@@ -73,6 +73,7 @@ Available Docker images for each supported architecture:
 - ✅ **Bun** - Fast JavaScript runtime
 - ✅ **C** - Classic systems programming
 - ✅ **C (assembly)** - C with partial assembly implementation (contributed by [bdrtr](https://github.com/bdrtr))
+- ✅ **C-Zig** - Zig calling C functions for computation (contributed by [bdrtr](https://github.com/bdrtr))
 - ✅ **C++** - Object-oriented systems programming
 - ✅ **C#** - .NET object-oriented programming
 - ✅ **Clojure** - Lisp dialect for JVM
