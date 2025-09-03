@@ -101,6 +101,11 @@ jobs:
           docker push "$github_image"
           docker push "$github_image_commit"
 
+          # delete image and garbage collect
+          docker rmi "$loaded_image"
+          docker system prune -f
+          nix-collect-garbage
+
           echo "::endgroup::"
         done
 
