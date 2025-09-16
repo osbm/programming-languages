@@ -1,0 +1,63 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. COLLATZ-CONJECTURE.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+01  WS-NUMBER          PIC 9(10).
+01  WS-N               PIC 9(10).
+01  WS-STEPS           PIC 9(10).
+01  WS-PEAK            PIC 9(10).
+01  WS-BEST-N          PIC 9(10).
+01  WS-BEST-STEPS      PIC 9(10).
+01  WS-BEST-PEAK       PIC 9(10).
+01  WS-XOR-STEPS       PIC 9(10).
+01  WS-MAX-N           PIC 9(10) VALUE 1000000.
+01  WS-TEMP            PIC 9(10).
+
+PROCEDURE DIVISION.
+MAIN-PROCEDURE.
+    DISPLAY "hello world!".
+    
+    MOVE 1 TO WS-BEST-N.
+    MOVE 0 TO WS-BEST-STEPS.
+    MOVE 1 TO WS-BEST-PEAK.
+    MOVE 0 TO WS-XOR-STEPS.
+    
+    PERFORM VARYING WS-NUMBER FROM 1 BY 1 
+            UNTIL WS-NUMBER > WS-MAX-N
+        PERFORM COMPUTE-COLLATZ
+        COMPUTE WS-XOR-STEPS = 
+            FUNCTION BITWISE-XOR(WS-XOR-STEPS, WS-STEPS)
+        IF WS-STEPS > WS-BEST-STEPS THEN
+            MOVE WS-NUMBER TO WS-BEST-N
+            MOVE WS-STEPS TO WS-BEST-STEPS
+            MOVE WS-PEAK TO WS-BEST-PEAK
+        END-IF
+    END-PERFORM.
+    
+    DISPLAY "collatz_longest(1.." WS-MAX-N ")".
+    DISPLAY "n*=" WS-BEST-N.
+    DISPLAY "steps=" WS-BEST-STEPS.
+    DISPLAY "peak=" WS-BEST-PEAK.
+    DISPLAY "xor_steps=" WS-XOR-STEPS.
+    
+    STOP RUN.
+
+COMPUTE-COLLATZ.
+    MOVE WS-NUMBER TO WS-N.
+    MOVE WS-NUMBER TO WS-PEAK.
+    MOVE 0 TO WS-STEPS.
+    
+    PERFORM UNTIL WS-N = 1
+        IF FUNCTION MOD(WS-N, 2) = 1 THEN
+            COMPUTE WS-N = 3 * WS-N + 1
+        ELSE
+            COMPUTE WS-N = WS-N / 2
+        END-IF
+        
+        IF WS-N > WS-PEAK THEN
+            MOVE WS-N TO WS-PEAK
+        END-IF
+        
+        ADD 1 TO WS-STEPS
+    END-PERFORM.
