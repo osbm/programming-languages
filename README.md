@@ -97,6 +97,7 @@ Available Docker images for each supported architecture:
 - ✅ **Go (concurrency)** - Go but with concurrency  (contributed by [bdrtr](https://github.com/bdrtr))
 - ✅ **Groovy** - Dynamic JVM language
 - ✅ **Haskell** - Pure functional programming
+- ✅ **Haxe** - Multi-platform language targeting multiple backends
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
 - ✅ **Julia** - High-performance scientific computing
@@ -123,7 +124,6 @@ Available Docker images for each supported architecture:
 - ✅ **Scheme** - Minimalist Lisp dialect
 - ✅ **Smalltalk** - Pioneering object-oriented programming
 - ✅ **Solidity** - Ethereum smart contract language
-- ✅ **Swift** - Apple's modern systems programming language
 - ✅ **TypeScript** - Typed JavaScript
 - ✅ **V** - Simple, fast compilation
 - ✅ **Zig** - Simple, fast systems programming
