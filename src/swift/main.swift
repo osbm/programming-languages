@@ -1,5 +1,3 @@
-import Foundation
-
 func collatzLenAndPeak(_ x: UInt64) -> (steps: UInt64, peak: UInt64) {
     var steps: UInt64 = 0
     var peak = x

@@ -33,7 +33,7 @@ end;
 
 procedure ScanUpto(N: Int64; var bestN, bestSteps, bestPeak, xorSteps: Int64);
 var
-  n: Int64;
+  i: Int64;
   result: TCollatzResult;
 begin
   bestN := 1;
@@ -41,13 +41,13 @@ begin
   bestPeak := 1;
   xorSteps := 0;
   
-  for n := 1 to N do
+  for i := 1 to N do
   begin
-    result := CollatzLenAndPeak(n);
+    result := CollatzLenAndPeak(i);
     xorSteps := xorSteps xor result.steps;
     if result.steps > bestSteps then
     begin
-      bestN := n;
+      bestN := i;
       bestSteps := result.steps;
       bestPeak := result.peak;
     end;
