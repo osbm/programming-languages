@@ -35,7 +35,7 @@
   };
 
   # Use CUDA 12.0 which should be compatible with driver 580.76.05
-  cudaPackages = pkgsWithCuda.cudaPackages_12_0;
+  cudaPackages = pkgsWithCuda.cudaPackages;
   cudatoolkit = cudaPackages.cudatoolkit;
 in
   cudaPackages.backendStdenv.mkDerivation {
