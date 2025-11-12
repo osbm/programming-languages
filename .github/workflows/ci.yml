@@ -41,116 +41,116 @@ jobs:
           echo "::endgroup::"
         done
 
-  build-and-publish-docker:
-    if: false
-    runs-on: ubuntu-latest
-    needs: test-languages
-    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    permissions:
-      contents: read
-      packages: write
-    steps:
-    - uses: actions/checkout@v4
+  # build-and-publish-docker:
+  #   if: false
+  #   runs-on: ubuntu-latest
+  #   needs: test-languages
+  #   # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  #   permissions:
+  #     contents: read
+  #     packages: write
+  #   steps:
+  #   - uses: actions/checkout@v4
 
-    - name: Install Nix
-      uses: cachix/install-nix-action@v24
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-        extra_nix_config: |
-          experimental-features = nix-command flakes
+  #   - name: Install Nix
+  #     uses: cachix/install-nix-action@v24
+  #     with:
+  #       nix_path: nixpkgs=channel:nixos-unstable
+  #       extra_nix_config: |
+  #         experimental-features = nix-command flakes
 
-    - name: Log in to GitHub Container Registry
-      uses: docker/login-action@v3
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+  #   - name: Log in to GitHub Container Registry
+  #     uses: docker/login-action@v3
+  #     with:
+  #       registry: ghcr.io
+  #       username: ${{ github.actor }}
+  #       password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Get available Docker images
-      id: docker-images
-      run: |
-        images=$(nix eval .#dockerImages.x86_64-linux --apply builtins.attrNames --json | jq -r 'map(select(. != "cuda" and . != "glsl")) | join(" ")')
-        echo "images=$images" >> $GITHUB_OUTPUT
+  #   - name: Get available Docker images
+  #     id: docker-images
+  #     run: |
+  #       images=$(nix eval .#dockerImages.x86_64-linux --apply builtins.attrNames --json | jq -r 'map(select(. != "cuda" and . != "glsl")) | join(" ")')
+  #       echo "images=$images" >> $GITHUB_OUTPUT
 
-    - name: Build and push Docker images
-      run: |
-        echo "Building and pushing the following Docker images: ${{ steps.docker-images.outputs.images }}"
-        for image in ${{ steps.docker-images.outputs.images }}; do
-          echo "::group::Building and pushing $image"
+  #   - name: Build and push Docker images
+  #     run: |
+  #       echo "Building and pushing the following Docker images: ${{ steps.docker-images.outputs.images }}"
+  #       for image in ${{ steps.docker-images.outputs.images }}; do
+  #         echo "::group::Building and pushing $image"
 
-          # Build the Docker image
-          echo "Building Docker image for $image..."
-          nix build .#dockerImages.x86_64-linux.$image
+  #         # Build the Docker image
+  #         echo "Building Docker image for $image..."
+  #         nix build .#dockerImages.x86_64-linux.$image
 
-          # Load into Docker
-          echo "Loading Docker image..."
-          docker load < result
+  #         # Load into Docker
+  #         echo "Loading Docker image..."
+  #         docker load < result
 
-          # Get the image name that was loaded
-          loaded_image=$(docker load < result | grep "Loaded image:" | cut -d' ' -f3)
-          echo "Loaded image: $loaded_image"
+  #         # Get the image name that was loaded
+  #         loaded_image=$(docker load < result | grep "Loaded image:" | cut -d' ' -f3)
+  #         echo "Loaded image: $loaded_image"
 
-          # Tag for GitHub Container Registry
-          github_image="ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest"
-          github_image_commit="ghcr.io/${{ github.repository_owner }}/programming-languages-$image:${{ github.sha }}"
+  #         # Tag for GitHub Container Registry
+  #         github_image="ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest"
+  #         github_image_commit="ghcr.io/${{ github.repository_owner }}/programming-languages-$image:${{ github.sha }}"
 
-          echo "Tagging as: $github_image"
-          docker tag "$loaded_image" "$github_image"
-          docker tag "$loaded_image" "$github_image_commit"
+  #         echo "Tagging as: $github_image"
+  #         docker tag "$loaded_image" "$github_image"
+  #         docker tag "$loaded_image" "$github_image_commit"
 
-          # Push to GitHub Container Registry
-          echo "Pushing to GitHub Container Registry..."
-          docker push "$github_image"
-          docker push "$github_image_commit"
+  #         # Push to GitHub Container Registry
+  #         echo "Pushing to GitHub Container Registry..."
+  #         docker push "$github_image"
+  #         docker push "$github_image_commit"
 
-          # delete image and garbage collect
-          docker rmi "$loaded_image"
-          docker system prune -f
-          nix-collect-garbage
+  #         # delete image and garbage collect
+  #         docker rmi "$loaded_image"
+  #         docker system prune -f
+  #         nix-collect-garbage
 
-          echo "::endgroup::"
-        done
+  #         echo "::endgroup::"
+  #       done
 
-    - name: Generate image list
-      run: |
-        echo "## 🐳 Available Docker Images" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "The following Docker images have been published to GitHub Container Registry:" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        for image in ${{ steps.docker-images.outputs.images }}; do
-          echo "- \`ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`ghcr.io/${{ github.repository_owner }}/programming-languages-$image:${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
-        done
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "### Usage Example:" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-        echo "docker run --rm ghcr.io/${{ github.repository_owner }}/programming-languages-python:latest" >> $GITHUB_STEP_SUMMARY
-        echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+  #   - name: Generate image list
+  #     run: |
+  #       echo "## 🐳 Available Docker Images" >> $GITHUB_STEP_SUMMARY
+  #       echo "" >> $GITHUB_STEP_SUMMARY
+  #       echo "The following Docker images have been published to GitHub Container Registry:" >> $GITHUB_STEP_SUMMARY
+  #       echo "" >> $GITHUB_STEP_SUMMARY
+  #       for image in ${{ steps.docker-images.outputs.images }}; do
+  #         echo "- \`ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest\`" >> $GITHUB_STEP_SUMMARY
+  #         echo "- \`ghcr.io/${{ github.repository_owner }}/programming-languages-$image:${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+  #       done
+  #       echo "" >> $GITHUB_STEP_SUMMARY
+  #       echo "### Usage Example:" >> $GITHUB_STEP_SUMMARY
+  #       echo "" >> $GITHUB_STEP_SUMMARY
+  #       echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+  #       echo "docker run --rm ghcr.io/${{ github.repository_owner }}/programming-languages-python:latest" >> $GITHUB_STEP_SUMMARY
+  #       echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
 
-  test-docker-images:
-    if: false
-    runs-on: ubuntu-latest
-    needs: build-and-publish-docker
-    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-    - name: Log in to GitHub Container Registry
-      uses: docker/login-action@v3
-      with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+  # test-docker-images:
+  #   if: false
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-publish-docker
+  #   # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  #   steps:
+  #   - name: Log in to GitHub Container Registry
+  #     uses: docker/login-action@v3
+  #     with:
+  #       registry: ghcr.io
+  #       username: ${{ github.actor }}
+  #       password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Test published Docker images
-      run: |
-        # Test a few key images to make sure they work
-        test_images=("python" "rust" "cpp" "go")
+  #   - name: Test published Docker images
+  #     run: |
+  #       # Test a few key images to make sure they work
+  #       test_images=("python" "rust" "cpp" "go")
 
-        for image in "${test_images[@]}"; do
-          echo "::group::Testing ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest"
+  #       for image in "${test_images[@]}"; do
+  #         echo "::group::Testing ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest"
 
-          # Pull and run the image
-          docker run --rm "ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest" | head -10
+  #         # Pull and run the image
+  #         docker run --rm "ghcr.io/${{ github.repository_owner }}/programming-languages-$image:latest" | head -10
 
-          echo "::endgroup::"
-        done
+  #         echo "::endgroup::"
+  #       done
