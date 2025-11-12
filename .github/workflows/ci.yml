@@ -7,39 +7,67 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  test-languages:
+  generate-matrix:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Generate language matrix
+        id: set-matrix
+        run: |
+          # Get all language packages, excluding cuda and glsl
+          packages=$(nix flake show --json | jq -r '.packages."x86_64-linux" | keys | map(select(. != "cuda" and . != "glsl"))')
+          echo "matrix={\"language\":$packages}" >> $GITHUB_OUTPUT
+
+  test-language:
+    needs: generate-matrix
     strategy:
       fail-fast: false
+      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Install Nix
-      uses: cachix/install-nix-action@v24
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-        extra_nix_config: |
-          experimental-features = nix-command flakes
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
 
-    - name: Get available packages
-      id: packages
-      run: |
-        packages=$(nix flake show --json | jq -r '.packages."x86_64-linux" | keys | map(select(. != "cuda" and . != "glsl")) | join(" ")')
-        echo "packages=$packages" >> $GITHUB_OUTPUT
+      - name: Setup magic nix cache (speed up builds)
+        uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          use-flakehub: false
+          diagnostic-endpoint: ""
 
-    - name: Test all programming languages
-      run: |
-        echo "Testing the following packages: ${{ steps.packages.outputs.packages }}"
-        for package in ${{ steps.packages.outputs.packages }}; do
-          echo "::group::Testing $package"
-          echo "Running: nix run .#$package"
-          timeout 1000 nix run .#$package || {
-            echo "::error::Package $package failed or timed out"
+      - name: Show flake outputs (debug)
+        run: nix flake show
+
+      - name: Test ${{ matrix.language }}
+        run: |
+          echo "Testing ${{ matrix.language }}"
+          echo "Running: nix run .#${{ matrix.language }}"
+          timeout 1000 nix run .#${{ matrix.language }} || {
+            echo "::error::Package ${{ matrix.language }} failed or timed out"
             exit 1
           }
-          echo "::endgroup::"
-        done
 
   # build-and-publish-docker:
   #   if: false
