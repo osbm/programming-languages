@@ -69,6 +69,7 @@ Available Docker images for each supported architecture:
 ## 🎨 Implemented Languages
 
 - ✅ **Assembly** - Low-level programming
+- ✅ **Awk** - Classic Unix text processing language
 - ✅ **Bash** - Shell scripting
 - ✅ **Bun** - Fast JavaScript runtime
 - ✅ **C** - Classic systems programming
@@ -77,6 +78,7 @@ Available Docker images for each supported architecture:
 - ✅ **C++** - Object-oriented systems programming
 - ✅ **C#** - .NET object-oriented programming
 - ✅ **Clojure** - Lisp dialect for JVM
+- ✅ **COBOL** - Historic enterprise programming language
 - ✅ **Crystal** - Ruby-like syntax, C-like performance
 - ✅ **Cuda** - GPU programming
 - ✅ **Cython** - Python with C extensions
@@ -87,12 +89,15 @@ Available Docker images for each supported architecture:
 - ✅ **Erlang** - Fault-tolerant concurrent programming
 - ✅ **F#** - .NET functional-first language
 - ✅ **Fish** - Friendly shell scripting
+- ✅ **Forth** - Stack-based concatenative programming
 - ✅ **Fortran** - Scientific and numerical computing
 - ✅ **Gleam** - Type-safe for Erlang VM
 - ✅ **GLSL** - Graphics shader language
 - ✅ **Go** - Concurrent systems programming
 - ✅ **Go (concurrency)** - Go but with concurrency  (contributed by [bdrtr](https://github.com/bdrtr))
+- ✅ **Groovy** - Dynamic JVM language
 - ✅ **Haskell** - Pure functional programming
+- ✅ **Haxe** - Multi-platform language targeting multiple backends
 - ✅ **Java** - Enterprise object-oriented programming
 - ✅ **JavaScript (Node.js)** - Web and server scripting
 - ✅ **Julia** - High-performance scientific computing
@@ -104,6 +109,7 @@ Available Docker images for each supported architecture:
 - ✅ **Nushell** - Modern shell with a focus on data
 - ✅ **OCaml** - ML family functional language
 - ✅ **Octave** - MATLAB-compatible mathematical programming
+- ✅ **Pascal** - Classic structured programming language
 - ✅ **Perl** - Text processing and scripting
 - ✅ **PHP** - Web development scripting
 - ✅ **PowerShell** - Object-oriented shell
@@ -114,7 +120,10 @@ Available Docker images for each supported architecture:
 - ✅ **Racket** - Modern Lisp/Scheme
 - ✅ **Ruby** - Elegant scripting language
 - ✅ **Rust** - Memory-safe systems programming
+- ✅ **Scala** - Functional/OO hybrid for JVM
 - ✅ **Scheme** - Minimalist Lisp dialect
+- ✅ **Smalltalk** - Pioneering object-oriented programming
+- ✅ **Solidity** - Ethereum smart contract language
 - ✅ **TypeScript** - Typed JavaScript
 - ✅ **V** - Simple, fast compilation
 - ✅ **Zig** - Simple, fast systems programming
